@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Decoration Team</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #fef9f9; margin:0; padding:0; }
+        .container { max-width: 500px; margin: 50px auto; padding: 30px; background: #fff7f0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #ff8c94; margin-bottom: 20px; }
+        input, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 6px; border: 1px solid #ffd3b6; }
+        button { background-color: #ffaaa5; color: white; border: none; cursor: pointer; transition: 0.3s; }
+        button:hover { background-color: #ff8c94; }
+        a { text-align: center; display: block; color: #ffaaa5; margin-top: 15px; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add Decoration Team</h2>
+        <form method="POST">
+            <label>Team Name:</label>
+            <input type="text" name="team_name" required><br>
+
+            <label>Price:</label>
+            <input type="number" name="price" required><br>
+
+            <h3>Upload up to 6 sample images (URLs)</h3>
+            <input type="text" name="image1" placeholder="Image 1 URL">
+            <input type="text" name="image2" placeholder="Image 2 URL">
+            <input type="text" name="image3" placeholder="Image 3 URL">
+            <input type="text" name="image4" placeholder="Image 4 URL">
+            <input type="text" name="image5" placeholder="Image 5 URL">
+            <input type="text" name="image6" placeholder="Image 6 URL"><br>
+
+            <button type="submit">Add Team</button>
+        </form>
+        <a href="/manager_dashboard">Back to Dashboard</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* General Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fef9f9; /* soft off-white */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff7f0; /* light pastel peach */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+h2, h3 {
+    color: #ff8c94; /* pastel pink */
+    text-align: center;
+}
+
+/* Links */
+a {
+    color: #ffaaa5; /* soft pastel pink */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Forms */
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #ffd3b6; /* soft pastel border */
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+form input:focus, form select:focus {
+    border-color: #ff8c94;
+    outline: none;
+}
+
+/* Buttons */
+input[type="submit"], button {
+    background-color: #ffaaa5;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+input[type="submit"]:hover, button:hover {
+    background-color: #ff8c94;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ffd3b6;
+}
+table th {
+    background-color: #ffddd2;
+}
+table tr:hover {
+    background-color: #fff0f0;
+}
+
+/* Alerts / messages */
+p {
+    color: #ff6f61;
+    text-align: center;
+}

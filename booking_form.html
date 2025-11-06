@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Event</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #fef9f9; margin:0; padding:0; }
+        .container { max-width: 900px; margin: 50px auto; padding: 30px; background: #fff7f0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2, h3 { color: #ff8c94; }
+        .event-info, .card { margin-bottom: 25px; padding: 20px; background-color: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .event-info img, .card img { border-radius: 6px; margin-right: 10px; margin-bottom: 10px; }
+        .images-container { display: flex; flex-wrap: wrap; }
+        input[type="radio"] { margin-right: 10px; }
+        input[type="date"], input[type="time"] { margin: 8px 0; padding: 8px; border-radius: 6px; border: 1px solid #ffd3b6; width: 100%; }
+        input[type="submit"] { background-color: #ffaaa5; color: white; border: none; border-radius: 8px; padding: 12px; cursor: pointer; width:100%; transition: 0.3s; }
+        input[type="submit"]:hover { background-color: #ff8c94; }
+        a.back { display:block; text-align:center; margin-top:20px; color: #ffaaa5; text-decoration:none; }
+        a.back:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Book Event: {{ event.event_name }}</h2>
+        <div class="event-info">
+            <img src="{{ event.image_url }}" alt="{{ event.event_name }}" width="300" height="200">
+            <p>Price: ₹{{ event.base_price }}</p>
+        </div>
+
+        <form method="POST">
+
+            <!-- Venues Section -->
+            <h3>Select Venue</h3>
+            {% for venue in venues %}
+            <div class="card">
+                <h4>{{ venue.venue_name }} - ₹{{ venue.price }}</h4>
+                <div class="images-container">
+                    {% for img in [venue.image1, venue.image2, venue.image3, venue.image4, venue.image5, venue.image6] %}
+                        {% if img %}
+                            <img src="{{ img }}" alt="Venue" width="150" height="100">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <label>
+                    <input type="radio" name="venue_id" value="{{ venue.venue_id }}" required>
+                    Select this venue
+                </label>
+            </div>
+            {% endfor %}
+
+            <!-- Decoration Teams Section -->
+            <h3>Select Decoration Team</h3>
+            {% for team in teams %}
+            <div class="card">
+                <h4>{{ team.team_name }} - ₹{{ team.price }}</h4>
+                <div class="images-container">
+                    {% for img in [team.image1, team.image2, team.image3, team.image4, team.image5, team.image6] %}
+                        {% if img %}
+                            <img src="{{ img }}" alt="Decoration" width="150" height="100">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <label>
+                    <input type="radio" name="team_id" value="{{ team.team_id }}" required>
+                    Select this team
+                </label>
+            </div>
+            {% endfor %}
+
+            <!-- Organizer Selection -->
+            <h3>Select Organizer</h3>
+            <select name="organizer_id" required>
+                <option value="">--Select Organizer--</option>
+                {% for org in organizers %}
+                    <option value="{{ org.organizer_id }}">{{ org.name }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- Date & Time -->
+            <h3>Event Date & Time</h3>
+            <label>Date:</label>
+            <input type="date" name="date" required><br><br>
+            <label>Time:</label>
+            <input type="time" name="time" required><br><br>
+
+            <input type="submit" value="Confirm Booking">
+        </form>
+
+        <a href="/customer_dashboard" class="back">Back to Dashboard</a>
+    </div>
+</body>
+</html>

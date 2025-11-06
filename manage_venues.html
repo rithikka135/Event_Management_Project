@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Venues</title>
+</head>
+<body>
+    <h2>Venues</h2>
+    <a href="/add_venue">Add New Venue</a><br><br>
+    <ul>
+        {% for v in venues %}
+        <li>{{ v[1] }} - Location: {{ v[2] }} - Price: ₹{{ v[3] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/manager_dashboard">Back to Dashboard</a>
+</body>
+</html>

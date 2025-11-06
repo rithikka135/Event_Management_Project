@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Organizers</title>
+</head>
+<body>
+    <h2>Organizers</h2>
+    <a href="/add_organizer">Add New Organizer</a><br><br>
+    <ul>
+        {% for o in organizers %}
+        <li>{{ o[1] }} - Contact: {{ o[2] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/manager_dashboard">Back to Dashboard</a>
+</body>
+</html>

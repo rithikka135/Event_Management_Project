@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decoration Teams</title>
+    <style>
+        .team-card { border:1px solid #ccc; padding:20px; margin:20px; border-radius:10px; }
+        .images { display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+        .images img { width:150px; height:120px; object-fit:cover; border-radius:8px; }
+    </style>
+</head>
+<body>
+    <h2>Available Decoration Teams</h2>
+    {% for team in teams %}
+    <div class="team-card">
+        <h3>{{ team.team_name }}</h3>
+        <p>Contact: {{ team.contact }}</p>
+        <p>Price: ₹{{ team.price }}</p>
+        
+        <div class="images">
+            {% if team.image1 %}<img src="{{ team.image1 }}" alt="Sample 1">{% endif %}
+            {% if team.image2 %}<img src="{{ team.image2 }}" alt="Sample 2">{% endif %}
+            {% if team.image3 %}<img src="{{ team.image3 }}" alt="Sample 3">{% endif %}
+            {% if team.image4 %}<img src="{{ team.image4 }}" alt="Sample 4">{% endif %}
+            {% if team.image5 %}<img src="{{ team.image5 }}" alt="Sample 5">{% endif %}
+            {% if team.image6 %}<img src="{{ team.image6 }}" alt="Sample 6">{% endif %}
+        </div>
+
+        <a href="/book_team/{{ team.team_id }}">Book This Team</a>
+    </div>
+    {% endfor %}
+</body>
+</html>

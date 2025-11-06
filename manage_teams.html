@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Decoration Teams</title>
+</head>
+<body>
+    <h2>Decoration Teams</h2>
+    <a href="/add_team">Add New Team</a><br><br>
+    <ul>
+        {% for t in teams %}
+        <li>{{ t[1] }} - Contact: {{ t[2] }} - Price: ₹{{ t[3] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/manager_dashboard">Back to Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Bookings</title>
+    <style>
+        body { background-color: #fef9f9; font-family: Arial, sans-serif; margin:0; padding:0; }
+        .container { max-width: 800px; margin: 50px auto; padding: 30px; background: #fff7f0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #ff8c94; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ffd3b6; padding: 8px; text-align: left; }
+        th { background-color: #ffaaa5; color: white; }
+        a { color: #ffaaa5; text-decoration: none; display:block; text-align:center; margin-top:20px; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>All Bookings</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Event</th>
+                <th>Venue</th>
+                <th>Decoration</th>
+                <th>Organizer</th>
+                <th>Total Price</th>
+            </tr>
+            {% for b in bookings %}
+            <tr>
+                <td>{{ b.booking_id }}</td>
+                <td>{{ b.customer_name }}</td>
+                <td>{{ b.event_name }}</td>
+                <td>{{ b.venue_name }}</td>
+                <td>{{ b.team_name }}</td>
+                <td>{{ b.organizer_name }}</td>
+                <td>₹{{ b.final_price }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/manager_dashboard">Back to Dashboard</a>
+    </div>
+</body>
+</html>

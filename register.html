@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <style>
+        body { background: #fef9f9; font-family: Arial; }
+        .container { max-width: 400px; margin: 80px auto; padding: 20px; background: #fff7f0; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
+        h2 { text-align:center; color:#ff8c94; }
+        input, select { width:100%; padding:10px; margin:10px 0; border-radius:6px; border:1px solid #ffd3b6;}
+        input[type="submit"] { background:#ffaaa5; color:white; border:none; cursor:pointer; }
+        input[type="submit"]:hover { background:#ff8c94; }
+        a { text-align:center; display:block; color:#ffaaa5; text-decoration:none; margin-top:10px;}
+        a:hover { text-decoration:underline;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form method="POST">
+            Name: <input type="text" name="name" required><br>
+            Email: <input type="email" name="email" required><br>
+            Password: <input type="password" name="password" required><br>
+            User Type:
+            <select name="user_type" required>
+                <option value="">Select</option>
+                <option value="customer">Customer</option>
+                <option value="manager">Manager</option>
+            </select><br>
+            <input type="submit" value="Register">
+        </form>
+        <a href="/login">Back to Login</a>
+    </div>
+</body>
+</html>

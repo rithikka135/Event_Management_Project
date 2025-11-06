@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body { background: #fef9f9; font-family: Arial; }
+        .container { max-width: 400px; margin: 80px auto; padding: 20px; background: #fff7f0; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
+        h2 { text-align:center; color:#ff8c94; }
+        input { width:100%; padding:10px; margin:10px 0; border-radius:6px; border:1px solid #ffd3b6;}
+        input[type="submit"] { background:#ffaaa5; color:white; border:none; cursor:pointer; }
+        input[type="submit"]:hover { background:#ff8c94; }
+        a { text-align:center; display:block; color:#ffaaa5; text-decoration:none; margin-top:10px;}
+        a:hover { text-decoration:underline;}
+        .msg { color:red; text-align:center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        {% if msg %}<p class="msg">{{ msg }}</p>{% endif %}
+        <form method="POST">
+            Email: <input type="email" name="email" required><br>
+            Password: <input type="password" name="password" required><br>
+            <input type="submit" value="Login">
+        </form>
+        <a href="/register">Register Here</a>
+    </div>
+</body>
+</html>
